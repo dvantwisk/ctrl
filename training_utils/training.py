@@ -56,7 +56,7 @@ seq_length = args.sequence_len
 
 def input_fn(params=None):
     print('READING!', params)
-    dataset = tf.data.Dataset.list_files(tf.io.gfile.glob('./*.tfrecords'), shuffle=True)
+    dataset = tf.data.Dataset.list_files(tf.io.gfile.glob('storage.googleapis.com/text_samples1/moby_dick.txt.tfrecords'), shuffle=True)
 
     tf_data = tf.data.TFRecordDataset(dataset)
     myfeatures = {
